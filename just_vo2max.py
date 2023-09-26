@@ -121,17 +121,17 @@ class CravatPostAggregator (BasePostAggregator):
         self.vo2max_cursor.execute(query_for_rsid)
         rsid_result = self.vo2max_cursor.fetchone()
 
-        query_for_genotype:str = f"SELECT genotype, weight, genotype_specific_conclusion FROM genotype_weights WHERE rsid = '{rsid}' AND allele='{alt}' AND zygot = '{zygot}'"
+        query_for_genotype:str = f"SELECT genotype, weight, genotype_specific_conclusion FROM genotype_weights WHERE rsid = '{rsid}' AND allele='{alt}' AND zygosity = '{zygot}'"
         self.vo2max_cursor.execute(query_for_genotype)
         genotype = self.vo2max_cursor.fetchone()
     
 
-        if genotype is None or rsid is None:
+        if genotype:
             return
 
         row_gen :set= {genotype[0][0], genotype[0][1]}
 
-        task:tuple = (rsid, rsid_result[0], rsid_result[1], genome, rsid_result[2], genotype[2], genotype[1], rsid_result[3], rsid_result[4], rsrsid_resultid[5],
+        task:tuple = (rsid, rsid_result[0], rsid_result[1], genome, rsid_result[2], genotype[2], genotype[1], rsid_result[3], rsid_result[4], rsid_result[5],
                      self.get_color(((genotype[1]).replace(',','.')), 0.6))
 
         if gen_set == row_gen:
