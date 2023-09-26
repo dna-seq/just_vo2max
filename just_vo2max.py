@@ -126,7 +126,7 @@ class CravatPostAggregator (BasePostAggregator):
         genotype = self.vo2max_cursor.fetchone()
     
 
-        if genotype:
+        if genotype is None or rsid is None:
             return
 
         row_gen :set= {genotype[0][0], genotype[0][1]}

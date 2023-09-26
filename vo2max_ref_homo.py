@@ -12,7 +12,7 @@ class Vo2maxRefHomo:
 
 
     def setup(self):
-        sql:str = "SELECT rsid, risk_allele, weight, genotype_specific_conclusion FROM genotype_weights WHERE ref_allele = risk_allele"
+        sql:str = "SELECT rsid, risk_allele, weight, genotype_specific_conclusion FROM genotype_weights WHERE state = 'ref' AND zygosity = 'hom'"
         self.parent.vo2max_cursor.execute(sql)
         rows:list[tuple] = self.parent.vo2max_cursor.fetchall()
         for row in rows:
