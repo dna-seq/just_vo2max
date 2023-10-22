@@ -1,6 +1,6 @@
 title: VO2max postaggregator
-version: 0.1.1
-data_version: 0.1.0
+version: 0.1.2
+data_version: 0.1.1
 name: just_vo2max
 type: postaggregator
 level: variant
@@ -44,3 +44,4 @@ developer:
 release_note:
 0.1.0: initial version
 0.1.1: fix in ref_homo
+0.1.2: updated database
