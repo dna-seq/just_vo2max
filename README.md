@@ -8,9 +8,9 @@ From Oakvar store:
 ```bash
 ov module install just_vo2max
 ```
-From a direct link on GitHub:
+Or make git clone of the current repository directly into "postaggregators" folder of Oakvar:
 ```bash
-ov module install https://github.com/dna-seq/just_vo2max
+git clone install https://github.com/dna-seq/just_vo2max
 ```
 
 ## Manual installation
