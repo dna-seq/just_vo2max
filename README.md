@@ -10,7 +10,7 @@ ov module install just_vo2max
 ```
 Or make git clone of the current repository directly into "postaggregators" folder of Oakvar:
 ```bash
-git clone install https://github.com/dna-seq/just_vo2max
+git clone https://github.com/dna-seq/just_vo2max
 ```
 
 ## Manual installation
